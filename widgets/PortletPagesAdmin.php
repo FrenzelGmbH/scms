@@ -1,12 +1,12 @@
 <?php
-namespace app\modules\pages\widgets;
+namespace frenzelgmbh\scms\widgets;
 
 use Yii;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
 use yii\data\ActiveDataProvider;
-use frenzelgmbh\sblog\models\Post;
+use frenzelgmbh\scms\models\Post;
 use frenzelgmbh\appcommon\widgets\Portlet;
 
 class PortletPagesAdmin extends Portlet
@@ -44,7 +44,7 @@ class PortletPagesAdmin extends Portlet
 		}
 
 		//here we don't return the view, here we just echo it!
-		echo $this->render('@app/modules/pages/widgets/views/_admin',array('menuItems'=>$this->menuItems));
+		echo $this->render('@scms/widgets/views/_admin',array('menuItems'=>$this->menuItems));
 	}
 
 	/**

@@ -1,12 +1,12 @@
 <?php
-namespace app\modules\pages\widgets;
+namespace frenzelgmbh\scms\widgets;
 
 use Yii;
 use yii\helpers\Html;
 use yii\data\ActiveDataProvider;
 
 use frenzelgmbh\appcommon\widgets\Portlet;
-use app\modules\pages\models\Page;
+use frenzelgmbh\scms\models\Page;
 
 class PortletPages extends Portlet
 {
@@ -38,7 +38,7 @@ class PortletPages extends Portlet
 		      ),
 	  	));
 		//here we don't return the view, here we just echo it!
-		echo $this->render('@app/modules/pages/widgets/views/_pages',array('dpPages'=>$dpPages));
+		echo $this->render('@scms/widgets/views/_pages',array('dpPages'=>$dpPages));
 	}
 
 	/**

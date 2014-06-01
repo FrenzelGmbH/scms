@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 
 /**
  * @var yii\base\View $this
- * @var app\modules\pages\models\Page $model
+ * @var frenzelgmbhscms\models\Page $model
  */
 
 $this->title = $model->name;

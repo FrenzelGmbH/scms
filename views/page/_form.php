@@ -12,7 +12,7 @@ use philippfrenzel\yiiwymeditor\yiiwymeditor;
 
 /**
  * @var yii\base\View $this
- * @var app\modules\pages\models\Page $model
+ * @var frenzelgmbhscms\models\Page $model
  * @var yii\widgets\ActiveForm $form
  */
 ?>

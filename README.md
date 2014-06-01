@@ -1,12 +1,12 @@
-sblog
-=====
+scms
+====
 
-SMART WebLog Module
+SMART Content Management Module
 
 Installation
 ============
 
-Install package via composer "frenzelgmbh/sblog": "dev-master"
+Install package via composer "frenzelgmbh/scms": "dev-master"
 
 Update config file *config/web.php* and *config/db.php*
 
@@ -14,8 +14,8 @@ Update config file *config/web.php* and *config/db.php*
 // app/config/web.php
 return [
     'modules' => [
-        'sblog' => [
-            'class' => 'frenzelgmbh\sblog\Module',
+        'pages' => [
+            'class' => 'frenzelgmbh\scms\Module',
             // set custom module properties here ...
         ],
     ],
@@ -28,7 +28,7 @@ return [
 ```
 
 Run migration file
-php yii migrate --migrationPath=@vendor/frenzelgmbh/sblog/migrations
+php yii migrate --migrationPath=@vendor/frenzelgmbh/scms/migrations
 
 Widgets
 =======
@@ -41,8 +41,8 @@ Widget for Picture Links (can be used to include advertisement links)
 * Picture (needs to be uploaded)
 * Link (whatever you wanna link to)
 ```php 
-if(class_exists('frenzelgmbh\sblog\widgets\WidgetPictureLink')){
-  echo frenzelgmbh\sblog\widgets\WidgetPictureLink::widget([
+if(class_exists('frenzelgmbh\scms\widgets\WidgetPictureLink')){
+  echo frenzelgmbh\scms\widgets\WidgetPictureLink::widget([
     'title'=>NULL,
     'limit'=>20,
   ]); 
@@ -51,8 +51,8 @@ if(class_exists('frenzelgmbh\sblog\widgets\WidgetPictureLink')){
 
 This Widget renders all posts in descendending order which is based upon the creation date of the posts.
 ```php
-if(class_exists('frenzelgmbh\sblog\widgets\PortletPostsStyled')){
-  echo frenzelgmbh\sblog\widgets\PortletPostsStyled::widget([
+if(class_exists('frenzelgmbh\scms\widgets\PortletPostsStyled')){
+  echo frenzelgmbh\scms\widgets\PortletPostsStyled::widget([
   'title'=>NULL,
     'limit'=>4,
   ]); 

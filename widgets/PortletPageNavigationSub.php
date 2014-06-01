@@ -1,12 +1,12 @@
 <?php
-namespace app\modules\pages\widgets;
+namespace frenzelgmbh\scms\widgets;
 
 use Yii;
 use yii\helpers\Html;
 use yii\data\ActiveDataProvider;
 
 use frenzelgmbh\appcommon\widgets\Portlet;
-use app\modules\pages\models\Page;
+use frenzelgmbh\scms\models\Page;
 
 class PortletPageNavigationSub extends Portlet
 {
@@ -47,7 +47,7 @@ class PortletPageNavigationSub extends Portlet
 		      ),
 	  	));
 		//here we don't return the view, here we just echo it!
-		echo $this->render('@app/modules/pages/widgets/views/_submenu',array('dpSubmenu'=>$dpSubmenu));
+		echo $this->render('@scms/widgets/views/_submenu',array('dpSubmenu'=>$dpSubmenu));
 	}
 
 	/**

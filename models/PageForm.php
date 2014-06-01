@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\pages\models;
+namespace frenzelgmbh\scms\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\modules\pages\models\Page;
+use frenzelgmbhscms\models\Page;
 
 /**
  * PageForm represents the model behind the search form about Page.

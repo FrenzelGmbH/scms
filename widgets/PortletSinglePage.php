@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\pages\widgets;
+namespace frenzelgmbh\scms\widgets;
 
 use Yii;
 use yii\helpers\Html;
@@ -7,7 +7,7 @@ use yii\helpers\Url;
 
 use yii\data\ActiveDataProvider;
 
-use app\modules\pages\models\Page;
+use frenzelgmbh\scms\models\Page;
 
 class PortletSinglePage extends \frenzelgmbh\appcommon\widgets\AdminPortlet
 {
@@ -53,7 +53,7 @@ class PortletSinglePage extends \frenzelgmbh\appcommon\widgets\AdminPortlet
 	protected function renderContent()
 	{
  		//here we don't return the view, here we just echo it!
-		echo $this->render('@app/modules/pages/widgets/views/_page',array('model'=>$this->_model));
+		echo $this->render('@scms/widgets/views/_page',array('model'=>$this->_model));
 	}
 
 	/**

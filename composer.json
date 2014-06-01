@@ -1,16 +1,16 @@
 {
-  "name": "frenzelgmbh/sblog",
-  "description": "Smart Weblog Module for yii2",
+  "name": "frenzelgmbh/scms",
+  "description": "Smart Content Management Module for yii2",
   "keywords": [
     "yii2",
-    "smart blog",
+    "smart content management",
     "frenzel gmbh"
   ],
   "type": "yii2-extension",
-  "license": "MIT",
+  "license": "GPLv2",
   "support": {
-    "issues": "https://github.com/frenzelgmbh/sblog/issues?state=open",
-    "source": "https://github.com/frenzelgmbh/sblog"
+    "issues": "https://github.com/frenzelgmbh/scms/issues?state=open",
+    "source": "https://github.com/frenzelgmbh/scms"
   },
   "authors": [
     {
@@ -24,22 +24,14 @@
     "yiisoft/yii2": "*",
     "kartik-v/yii2-grid": "dev-master",
     "kartik-v/yii2-widgets":"dev-master",
-    "kartik-v/yii2-social":"dev-master",
     "philippfrenzel/yiiwymeditor":"dev-master",
     "frenzelgmbh/appcommon":"dev-master",
     "frenzelgmbh/cm-categories":"*",
-    "suin/php-rss-writer": ">=1.0",
-    "frenzelgmbh/cm-address" : "dev-master"
-  },
-  "require-dev": {
-    "yiisoft/yii2-codeception": "*",
-    "codeception/specify": "*",
-    "codeception/verify": "*",
-    "guzzlehttp/guzzle": "~4.0"
+    "suin/php-rss-writer": ">=1.0"
   },
   "autoload": {
     "psr-4": {
-      "frenzelgmbh\\sblog\\": ""
+      "frenzelgmbh\\scms\\": ""
     }
   }
 }

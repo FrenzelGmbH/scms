@@ -9,7 +9,7 @@ use yii\grid\DataColumn;
 /**
  * @var yii\base\View $this
  * @var yii\data\ActiveDataProvider $dataProvider
- * @var app\modules\pages\models\PageForm $searchModel
+ * @var frenzelgmbhscms\models\PageForm $searchModel
  */
 
 $this->title = 'Manage Content Pages';

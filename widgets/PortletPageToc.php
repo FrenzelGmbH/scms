@@ -1,10 +1,10 @@
 <?php
-namespace app\modules\pages\widgets;
+namespace frenzelgmbh\scms\widgets;
 
 use \Yii;
 use yii\helpers\Html;
 
-use app\modules\pages\models\Page;
+use frenzelgmbh\scms\models\Page;
 use frenzelgmbh\appcommon\widgets\Portlet;
 
 class PortletPageToc extends Portlet
@@ -19,6 +19,6 @@ class PortletPageToc extends Portlet
 
 	protected function renderContent()
 	{
-		echo $this->render('@app/modules/pages/widgets/views/portlet_pages_toc');
+		echo $this->render('@scms/widgets/views/portlet_pages_toc');
 	}
 }

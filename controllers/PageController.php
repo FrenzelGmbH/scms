@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\pages\controllers;
+namespace frenzelgmbh\scms\controllers;
 
 use \Yii;
 
 use app\models\User;
 
-use app\modules\pages\models\Page;
-use app\modules\pages\models\PageForm;
+use frenzelgmbh\scms\models\Page;
+use frenzelgmbh\scms\models\PageForm;
 
 use yii\data\ActiveDataProvider;
 use frenzelgmbh\appcommon\controllers\AppController;
@@ -22,7 +22,16 @@ use yii\gii\components\DiffRendererHtmlInline;
  */
 class PageController extends AppController
 {
+	/**
+	 * [$layout description]
+	 * @var string
+	 */
+	public $layout = "column2";
 
+	/**
+	 * saves the old model
+	 * @var [type]
+	 */
 	public $_model = NULL;
 
 	public function behaviors() {
@@ -87,7 +96,6 @@ class PageController extends AppController
 	 */
 	public function actionIndex()
 	{
-		$this->layout = \frenzelgmbh\appcommon\controllers\AppController::adminlayout;
 		$searchModel = new PageForm;
 		$dataProvider = $searchModel->search($_GET);
 
@@ -116,6 +124,7 @@ class PageController extends AppController
 	 */
 	public function actionOnlineview($id)
 	{
+		$this->layout = '/column2_blog'
 		$model = $this->findModel($id);
 		if(strlen($model->template)>0)
 			$this->layout = $model->template;
@@ -130,7 +139,6 @@ class PageController extends AppController
 	* @return  mixed
 	*/
 	public function actionFilemanager(){
-		$this->layout = '/main_blog';
 		return $this->render('elfinder');
 	}
 
@@ -141,7 +149,6 @@ class PageController extends AppController
 	 */
 	public function actionCreate($id = NULL)
 	{
-		$this->layout = \frenzelgmbh\appcommon\controllers\AppController::adminlayout;
 		$model=new Page();
 		if(!is_null($id))
 			$model->parent_pages_id = $id;
@@ -163,7 +170,6 @@ class PageController extends AppController
 	 */
 	public function actionUpdate($id)
 	{
-		$this->layout = \frenzelgmbh\appcommon\controllers\AppController::adminlayout;
 		$model = $this->findModel($id);
 
 		if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -228,9 +234,6 @@ class PageController extends AppController
 	 * @return view the diff view
 	 */
 	public function actionDiffview($id){
-		//changing layout
-		$this->layout = \frenzelgmbh\appcommon\controllers\AppController::adminlayout;
-		
 		$model = $this->findParentModel($id);
 		$compareModel = Page::findOne($id);
 
@@ -284,7 +287,6 @@ class PageController extends AppController
 	 * @return view the diff view
 	 */
 	public function actionViewparent($id){
-		$this->layout = \frenzelgmbh\appcommon\controllers\AppController::adminlayout;
 		$model=$this->findParentModel($id);
 		return $this->render('view',array(
 			'model'=>$model,		

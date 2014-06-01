@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\pages\widgets;
+namespace frenzelgmbh\scms\widgets;
 
 use \Yii;
 use yii\helpers\Html;
@@ -24,6 +24,6 @@ class PortletCmsToc extends Portlet
 
   protected function renderContent()
   {
-    echo $this->render('@app/modules/pages/widgets/views/portlet_cms_toc',array('rootId'=>$this->rootId));
+    echo $this->render('@scms/widgets/views/portlet_cms_toc',array('rootId'=>$this->rootId));
   }
 }

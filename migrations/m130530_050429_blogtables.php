@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The migration script for the sblog
+ * The migration script for the scms
  * @author Philipp Frenzel <philipp@frenzel.net>
  * @copyright Frenzel GmbH
  * @version 1.0

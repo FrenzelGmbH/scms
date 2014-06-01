@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\pages\widgets;
+namespace frenzelgmbh\scms\widgets;
 
 use Yii;
 use yii\helpers\Html;

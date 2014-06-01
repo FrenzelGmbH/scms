@@ -1,10 +1,10 @@
 <?php
-namespace app\modules\pages\widgets;
+namespace frenzelgmbh\scms\widgets;
 
 use \Yii;
 use yii\helpers\Html;
 
-use app\modules\pages\models\Page;
+use frenzelgmbh\scms\models\Page;
 use frenzelgmbh\appcommon\widgets\Portlet;
 
 class PortletCmsHistory extends Portlet
@@ -21,6 +21,6 @@ class PortletCmsHistory extends Portlet
 	protected function renderContent()
 	{
 		$historics = Page::findOldVersions($this->id)->All();
-		echo $this->render('@app/modules/pages/widgets/views/portlet_cms_history',array('historics'=>$historics));
+		echo $this->render('@scms/widgets/views/portlet_cms_history',array('historics'=>$historics));
 	}
 }

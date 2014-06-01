@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\pages\models;
+namespace frenzelgmbh\scms\models;
 
 use \Yii;
 use yii\base\Model;

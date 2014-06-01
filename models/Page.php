@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\pages\models;
+namespace frenzelgmbh\scms\models;
 
 use \Yii;
 use yii\helpers\Html;
@@ -116,7 +116,7 @@ class Page extends \yii\db\ActiveRecord
    * @return [type] [description]
    */
   public function getParent(){
-    return $this->hasOne('app\modules\pages\models\Page',array('id'=>'parent_pages_id'));
+    return $this->hasOne('frenzelgmbhscms\models\Page',array('id'=>'parent_pages_id'));
   }
 
 	/**

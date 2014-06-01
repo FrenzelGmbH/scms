@@ -4,7 +4,7 @@
  * @author Philipp Frenzel <philipp@frenzel.net> 
  */
 
-namespace frenzelgmbh\sblog;
+namespace frenzelgmbh\scms;
 
 use yii\web\AssetBundle;
 
@@ -12,12 +12,12 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class sblogAsset extends AssetBundle
+class scmsAsset extends AssetBundle
 {
-    public $sourcePath = '@frenzelgmbh/sblog/assets';
+    public $sourcePath = '@frenzelgmbh/scms/assets';
     
     public $css = [
-        'css/sblog.css'
+        'css/scms.css'
     ];
     
     public $js = [];

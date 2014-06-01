@@ -1,11 +1,11 @@
 <?php
-namespace app\modules\pages\widgets;
+namespace frenzelgmbh\scms\widgets;
 
 use Yii;
 use yii\helpers\Html;
 
-use app\modules\pages\models\Page;
-use app\modules\pages\models\PageSearchForm;
+use frenzelgmbh\scms\models\Page;
+use frenzelgmbh\scms\models\PageSearchForm;
 
 use frenzelgmbh\appcommon\widgets\Portlet;
 
@@ -30,6 +30,6 @@ class PortletPagesSearch extends Portlet
 			if($model->searchstring!=='')
 				$hits = Page::searchByString($model->searchstring)->all();
 		}
-		echo $this->render('@app/modules/pages/widgets/views/_search',array('model'=>$model,'hits'=>$hits));
+		echo $this->render('@scms/widgets/views/_search',array('model'=>$model,'hits'=>$hits));
 	}
 }

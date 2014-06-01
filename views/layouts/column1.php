@@ -1,4 +1,4 @@
-<?php $this->beginContent('@app/views/layouts/'.\frenzelgmbh\appcommon\controllers\AppController::mainlayout.'.php'); ?>
+<?php $this->beginContent('@adminUi/themes/layouts/main.php'); ?>
 <div id="content">
   <div class="cms">
     <?= $content; ?>
