@@ -3,7 +3,6 @@
 use yii\helpers\Html;
 use yii\widgets\Block;
 use yii\helpers\HtmlPurifier;
-use yii\widgets\Breadcrumbs;
 
 /**
  * @var yii\base\View $this
@@ -31,10 +30,6 @@ $this->params['breadcrumbs'][] = array('label' => $this->title);
 <?php
 	endif;
 ?>
-
-<?= Breadcrumbs::widget(array(
-			'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : array(),
-		)); ?>
 
 <?php Block::begin(array('id'=>'sidebar')); ?>
 
