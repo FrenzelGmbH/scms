@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 /**
  * @var yii\base\View $this
- * @var frenzelgmbhscms\models\Page $model
+ * @var frenzelgmbh\scms\models\Page $model
  */
 
 $this->title = 'Create Page';

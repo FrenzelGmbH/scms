@@ -7,7 +7,7 @@ use yii\widgets\Breadcrumbs;
 
 /**
  * @var yii\base\View $this
- * @var frenzelgmbhscms\models\Page $model
+ * @var frenzelgmbh\scms\models\Page $model
  */
 
 $this->title = $model->name;
@@ -39,30 +39,30 @@ $this->params['breadcrumbs'][] = array('label' => $this->title);
 <?php Block::begin(array('id'=>'sidebar')); ?>
 
   <?php 
-    if(class_exists('\frenzelgmbhscms\widgets\PortletPageToc') && Yii::$app->user->identity->isUser){
-      echo \frenzelgmbhscms\widgets\PortletPageToc::widget(); 
+    if(class_exists('\frenzelgmbh\scms\widgets\PortletPageToc') && Yii::$app->user->identity->isUser){
+      echo \frenzelgmbh\scms\widgets\PortletPageToc::widget(); 
     }
   ?>  
 
 	<?php
 		if(in_array("advanced",explode(';',$model->vars))){
-			echo frenzelgmbhscms\widgets\PortletCmsToc::widget(array(
+			echo frenzelgmbh\scms\widgets\PortletCmsToc::widget(array(
     			'rootId'=>$model->id,
     			'contentCssClass' => 'bg-color-white'
 			));
 		}else{
-			echo frenzelgmbhscms\widgets\PortletPageNavigationSub::widget(array(
+			echo frenzelgmbh\scms\widgets\PortletPageNavigationSub::widget(array(
     		'id'=>$model->id,
 			));
 		}
 		if(in_array("search",explode(';',$model->vars))){
-			echo frenzelgmbhscms\widgets\PortletPagesSearch::widget();
+			echo frenzelgmbh\scms\widgets\PortletPagesSearch::widget();
 		}
 	?>
 
   <?php 
-    if(class_exists('\frenzelgmbhscms\widgets\PortletCmsHistory') && Yii::$app->user->identity->isUser){
-      echo \frenzelgmbhscms\widgets\PortletCmsHistory::widget(array(
+    if(class_exists('\frenzelgmbh\scms\widgets\PortletCmsHistory') && Yii::$app->user->identity->isUser){
+      echo \frenzelgmbh\scms\widgets\PortletCmsHistory::widget(array(
         'id'=>$model->id,
       )); 
     }

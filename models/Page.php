@@ -116,7 +116,7 @@ class Page extends \yii\db\ActiveRecord
    * @return [type] [description]
    */
   public function getParent(){
-    return $this->hasOne('frenzelgmbhscms\models\Page',array('id'=>'parent_pages_id'));
+    return $this->hasOne('frenzelgmbh\scms\models\Page',array('id'=>'parent_pages_id'));
   }
 
 	/**

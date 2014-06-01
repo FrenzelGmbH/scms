@@ -20,17 +20,17 @@ $this->params['breadcrumbs'][] = array('label' => $model->title);
 	
 	<?php
 		if(in_array("advanced",explode(';',$model->vars))){
-			echo frenzelgmbhscms\widgets\PortletCmsToc::widget(array(
+			echo frenzelgmbh\scms\widgets\PortletCmsToc::widget(array(
     			'rootId'=>$model->id,
     			'contentCssClass' => 'bg-color-white'
 			));
 		}else{
-			echo frenzelgmbhscms\widgets\PortletPageNavigationSub::widget(array(
+			echo frenzelgmbh\scms\widgets\PortletPageNavigationSub::widget(array(
     		'id'=>$model->id,
 			));
 		}
 		if(in_array("search",explode(';',$model->vars))){
-			echo frenzelgmbhscms\widgets\PortletPagesSearch::widget();
+			echo frenzelgmbh\scms\widgets\PortletPagesSearch::widget();
 		}
 	?>
 
