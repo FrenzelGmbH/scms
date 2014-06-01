@@ -12,7 +12,7 @@ use yii\widgets\Breadcrumbs;
 
 $this->title = $model->name;
 
-if(!is_null($model->parent->title))
+if(!is_null($model->parent))
 	$this->params['breadcrumbs'][] = array('label' => $model->parent->title, 'url' => array('/pages/page/onlineview','id'=>$model->parent_pages_id));
 
 $this->params['breadcrumbs'][] = array('label' => $this->title);
@@ -46,17 +46,17 @@ $this->params['breadcrumbs'][] = array('label' => $this->title);
 
 	<?php
 		if(in_array("advanced",explode(';',$model->vars))){
-			echo frenzelgmbh\scms\widgets\PortletCmsToc::widget(array(
+			echo \frenzelgmbh\scms\widgets\PortletCmsToc::widget(array(
     			'rootId'=>$model->id,
     			'contentCssClass' => 'bg-color-white'
 			));
 		}else{
-			echo frenzelgmbh\scms\widgets\PortletPageNavigationSub::widget(array(
+			echo \frenzelgmbh\scms\widgets\PortletPageNavigationSub::widget(array(
     		'id'=>$model->id,
 			));
 		}
 		if(in_array("search",explode(';',$model->vars))){
-			echo frenzelgmbh\scms\widgets\PortletPagesSearch::widget();
+			echo \frenzelgmbh\scms\widgets\PortletPagesSearch::widget();
 		}
 	?>
 
