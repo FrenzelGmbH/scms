@@ -4,7 +4,7 @@ namespace frenzelgmbh\scms\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frenzelgmbhscms\models\Page;
+use frenzelgmbh\scms\models\Page;
 
 /**
  * PageForm represents the model behind the search form about Page.
