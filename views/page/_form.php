@@ -1,6 +1,6 @@
 <?php
 
-use yii\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
 use yii\helpers\Json;
 use yii\web\JsExpression;
 
@@ -9,6 +9,8 @@ use yii\helpers\Url;
 
 use app\modules\workflow\models\Workflow;
 use philippfrenzel\yiiwymeditor\yiiwymeditor;
+
+use yii\bootstrap\Tabs;
 
 /**
  * @var yii\base\View $this
@@ -19,33 +21,31 @@ use philippfrenzel\yiiwymeditor\yiiwymeditor;
 
 <div class="page-form">
 
-	<?php $form = ActiveForm::begin(); ?>
+  <?php $form = ActiveForm::begin(); ?>
+
+  <?php
+echo Tabs::widget([
+    'items' => [
+        [
+            'label' => 'Main Settings',
+            'content' => $this->render('tabs/tab_1', ['model' => $model,'form'=>$form]),
+            'active' => true
+        ],
+        [
+            'label' => 'Content Description',
+            'content' => $this->render('tabs/tab_2', ['model' => $model,'form'=>$form])
+        ],
+        [
+            'label' => 'Layout Settings',
+            'content' => $this->render('tabs/tab_3', ['model' => $model,'form'=>$form])
+        ]
+    ],
+]);
+?>
 
 <div class="row">
-	<div class="col-lg-12">
-		<?= $form->field($model,'title')->textInput(array('size'=>80,'maxlength'=>128,'class'=>'form-control tipster','title'=>'Titel der Seite')); ?>
-		<?= $form->field($model,'name')->textInput(array('size'=>80,'maxlength'=>128)); ?>		
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-lg-4">
-		<?= $form->field($model, 'parent_pages_id')->dropDownList($model::getListOptions()); ?>
-		<?= $form->field($model, 'description')->textarea(array('rows' => 2)); ?>
-		<?= $form->field($model, 'tags')->textInput(array('size'=>50)); ?>
-		<?= $form->field($model, 'status')->dropDownList(Workflow::getStatusOptions()); ?>
-		<?= $form->field($model, 'template')->textarea(array('rows' => 2)); ?>
-		<?= $form->field($model, 'vars')->textInput(); ?>
-		<?= $form->field($model, 'ord')->textInput(); ?>
-		<?= $form->field($model, 'special')->textInput(); ?>
-		<?= $form->field($model, 'date_associated')->textInput(); ?>
-		<?= $form->field($model, 'category')->textInput(array('maxlength' => 64)); ?>
-		<?= $form->field($model, 'time_create')->textInput(); ?>
-		<?= $form->field($model, 'time_update')->textInput(); ?>
-	</div>
-	<div class="col-lg-8">
-
-	<?php
+  <div class="col-md-12">
+  <?php
 
 $pinterest = <<< SCRIPT
 {instanceReady: function() {
@@ -66,27 +66,27 @@ SCRIPT;
 
 ?>
 
-		<?= yiiwymeditor::widget(array(
-			'model'=>$model,
-			'attribute'=>'body',
-			'clientOptions'=>array(
-				'on' => new JsExpression($pinterest),
-				'toolbar' => 'basic',
-				'height' => '400px',
-				'filebrowserBrowseUrl' => Url::to(array('/pages/page/filemanager')),
-				'filebrowserImageBrowseUrl' => Url::to(array('/pages/page/filemanager','mode'=>'image')),
-			),
-			'inputOptions'=>array(
-				'size'=>'2',
-			)
-		));?>
-	</div>
+    <?= yiiwymeditor::widget(array(
+      'model'=>$model,
+      'attribute'=>'body',
+      'clientOptions'=>array(
+        'on' => new JsExpression($pinterest),
+        'toolbar' => 'basic',
+        'height' => '400px',
+        'filebrowserBrowseUrl' => Url::to(array('/pages/page/filemanager')),
+        'filebrowserImageBrowseUrl' => Url::to(array('/pages/page/filemanager','mode'=>'image')),
+      ),
+      'inputOptions'=>array(
+        'size'=>'2',
+      )
+    ));?>
+  </div>
 </div>
-		
-		<div class="form-group">
-			<?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', array('class' => 'btn btn-primary')); ?>
-		</div>
+    
+  <div class="form-group navbar navbar-default">
+    <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', array('class' => 'btn btn-info navbar-btn tipster','title'=>'update this record')); ?>
+  </div>
 
-	<?php ActiveForm::end(); ?>
+  <?php ActiveForm::end(); ?>
 
 </div>

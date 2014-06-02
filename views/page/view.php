@@ -1,7 +1,9 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\DetailView;
+use kartik\widgets\SideNav;
 
 /**
  * @var yii\base\View $this
@@ -12,7 +14,28 @@ $this->title = $model->name;
 $this->params['breadcrumbs'][] = array('label' => 'Pages', 'url' => array('index'));
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="module-wsp">
+
+<?php yii\widgets\Block::begin(array('id'=>'sidebar')); ?>
+
+	<?php 
+
+  	$sideMenu = array();
+  	$sideMenu[] = array('icon'=>'book','label'=>Yii::t('app','CMS'),'url'=>Url::to(array('/pages/page/index')));
+    $sideMenu[] = array('icon'=>'plus','label'=>Yii::t('app','New Page'),'url'=>Url::to(array('/pages/page/create')));
+    //$sideMenu[] = array('icon'=>'arrow-right','label'=>Yii::t('app','Manage Categories'),'url'=>Url::to(array('/categories/categories/index')));
+    //$sideMenu[] = array('icon'=>'arrow-right','label'=>Yii::t('app','Manage Tags'),'url'=>Url::to(array('/tags/default/index')));
+   
+    echo SideNav::widget([
+      'type' => SideNav::TYPE_INFO,
+      'heading' => 'CMS Menu',
+      'items' => $sideMenu
+    ]);
+
+  ?>
+
+<?php yii\widgets\Block::end(); ?>
+
+<div class="workbench">
 
 	<h1><?= Html::encode($this->title); ?></h1>
 
