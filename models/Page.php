@@ -237,30 +237,26 @@ class Page extends \yii\db\ActiveRecord
 	 */
 	public function beforeSave($insert)
 	{
-		if (parent::beforeSave($insert)) {
-			if ($insert) {
-				$this->time_create=$this->time_update=time();
-			}
-			else {
-				$this->time_update=time();
-        $this->date_associated = date('Y-m-d');
-				//here we check if the body has changed
-				if($this->body != $this->_oldBody){
-					$OldPage = new Page; //looks strange, but the old page needs to be backuped into a new one;)
-					$OldPage->body = $this->_oldBody;
-					$OldPage->title = $this->title;
-					$OldPage->name = $this->name;
-					$OldPage->tags = $this->_oldTags;
-					$OldPage->parent_pages_id = $this->id;
-					$OldPage->special = -1; //means its a none normal page
-					$OldPage->status = Workflow::STATUS_ARCHIVED;
-					$OldPage->save();
-				}
-			}
-			return true;
-		} else {
-			return false;
+		if ($insert) {
+			$this->time_create=$this->time_update=time();
 		}
+		else {
+			$this->time_update=time();
+    		$this->date_associated = date('Y-m-d');
+			//here we check if the body has changed
+			if($this->body != $this->_oldBody){
+				$OldPage = new Page; //looks strange, but the old page needs to be backuped into a new one;)
+				$OldPage->body = $this->_oldBody;
+				$OldPage->title = $this->title;
+				$OldPage->name = $this->name;
+				$OldPage->tags = $this->_oldTags;
+				$OldPage->parent_pages_id = $this->id;
+				$OldPage->special = -1; //means its a none normal page
+				$OldPage->status = Workflow::STATUS_ARCHIVED;
+				$OldPage->save();
+			}
+		}
+		return parent::beforeSave($insert);
 	}
 
 	/**
