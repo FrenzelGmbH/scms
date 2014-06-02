@@ -21,12 +21,14 @@ $this->params['breadcrumbs'][] = $this->title;
 	<?php 
 
   	$sideMenu = array();
-  	$sideMenu[] = array('icon'=>'home','label'=>Yii::t('app','Home'),'url'=>Url::to(array('/site/index')));
-  	$sideMenu[] = array('icon'=>'plus','label'=>Yii::t('app','New Page'),'url'=>Url::to(array('/pages/page/create')));
+  	$sideMenu[] = array('icon'=>'book','label'=>Yii::t('app','CMS'),'url'=>Url::to(array('/pages/page/index')));
+    $sideMenu[] = array('icon'=>'plus','label'=>Yii::t('app','New Page'),'url'=>Url::to(array('/pages/page/create')));
+    //$sideMenu[] = array('icon'=>'arrow-right','label'=>Yii::t('app','Manage Categories'),'url'=>Url::to(array('/categories/categories/index')));
+    //$sideMenu[] = array('icon'=>'arrow-right','label'=>Yii::t('app','Manage Tags'),'url'=>Url::to(array('/tags/default/index')));
    
     echo SideNav::widget([
-      'type' => SideNav::TYPE_DEFAULT,
-      'heading' => 'Options',
+      'type' => SideNav::TYPE_INFO,
+      'heading' => 'CMS Menu',
       'items' => $sideMenu
     ]);
 
