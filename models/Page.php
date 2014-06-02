@@ -76,7 +76,6 @@ class Page extends \yii\db\ActiveRecord
 			array(['title', 'name'], 'string', 'max'=>128),
 			array('parent_pages_id','integer'),
 			array(['description', 'vars'],'string'),
-			array('date_associated','date'),
 			array('ord','integer'),
 			array(['time_create', 'time_update', 'template'],'string'),
 			array('special','integer'),
