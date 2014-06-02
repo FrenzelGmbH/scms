@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			'body:ntext',
 			'parent_pages_id',
 			'ord',
-			'created_at:datetime',
+			'time_create:datetime',
 			'special',
 			'title:ntext',
 			'template:ntext',

@@ -235,13 +235,13 @@ class Page extends \yii\db\ActiveRecord
 	 * @return boolean whether the record should be saved.
 	 */
 	public function beforeSave($insert)
-	{
+	{	
+		$this->date_associated = date('Y-m-d');
 		if ($insert) {
 			$this->time_create=$this->time_update=time();
 		}
 		else {
-			$this->time_update=time();
-    		$this->date_associated = date('Y-m-d');
+			$this->time_update=time();    		
 			//here we check if the body has changed
 			if($this->body != $this->_oldBody){
 				$OldPage = new Page; //looks strange, but the old page needs to be backuped into a new one;)
