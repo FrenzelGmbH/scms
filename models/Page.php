@@ -77,7 +77,7 @@ class Page extends \yii\db\ActiveRecord
 			array('parent_pages_id','integer'),
 			array(['description', 'vars'],'string'),
 			array('ord','integer'),
-			array(['time_create', 'time_update', 'template'],'string'),
+			array(['template'],'string'),
 			array('special','integer'),
 			array('category','integer'),
 			array('tags', 'match', 'pattern'=>'/^[\w\s,]+$/', 'message'=>'Tags can only contain word characters.'),
