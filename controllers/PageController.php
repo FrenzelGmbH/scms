@@ -77,7 +77,7 @@ class PageController extends AppController
 			        array(
 			        	  'rootAlias' => 'CMS Bilder',
 			            'driver' => 'LocalFileSystem',
-			            'path'   => dirname(__DIR__).'/../../web/img/',
+			            'path'   => dirname(__DIR__).'/../../../web/img/',
 			            'URL'    => '/img',				            
 			            'mimeDetect' => 'internal',
 			            'dotFiles' => false,
