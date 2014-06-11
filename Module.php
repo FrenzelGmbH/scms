@@ -36,5 +36,5 @@ class Module extends BaseModule {
         //as we have no view in this context we need to make the way over the $app->view
         scmsAsset::register(\Yii::$app->view);
     }
-
+    
 }
