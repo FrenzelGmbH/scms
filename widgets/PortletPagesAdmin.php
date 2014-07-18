@@ -44,7 +44,7 @@ class PortletPagesAdmin extends Portlet
 		}
 
 		//here we don't return the view, here we just echo it!
-		echo $this->render('@scms/widgets/views/_admin',array('menuItems'=>$this->menuItems));
+		echo $this->render('@frenzelgmbh/scms/widgets/views/_admin',array('menuItems'=>$this->menuItems));
 	}
 
 	/**

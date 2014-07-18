@@ -38,7 +38,7 @@ class PortletPages extends Portlet
 		      ),
 	  	));
 		//here we don't return the view, here we just echo it!
-		echo $this->render('@scms/widgets/views/_pages',array('dpPages'=>$dpPages));
+		echo $this->render('@frenzelgmbh/scms/widgets/views/_pages',array('dpPages'=>$dpPages));
 	}
 
 	/**

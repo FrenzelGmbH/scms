@@ -30,6 +30,6 @@ class PortletPagesSearch extends Portlet
 			if($model->searchstring!=='')
 				$hits = Page::searchByString($model->searchstring)->all();
 		}
-		echo $this->render('@scms/widgets/views/_search',array('model'=>$model,'hits'=>$hits));
+		echo $this->render('@frenzelgmbh/scms/widgets/views/_search',array('model'=>$model,'hits'=>$hits));
 	}
 }

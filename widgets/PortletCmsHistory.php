@@ -21,6 +21,6 @@ class PortletCmsHistory extends Portlet
 	protected function renderContent()
 	{
 		$historics = Page::findOldVersions($this->id)->All();
-		echo $this->render('@scms/widgets/views/portlet_cms_history',array('historics'=>$historics));
+		echo $this->render('@frenzelgmbh/scms/widgets/views/portlet_cms_history',array('historics'=>$historics));
 	}
 }
