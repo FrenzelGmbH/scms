@@ -24,6 +24,6 @@ class PortletCmsToc extends Portlet
 
   protected function renderContent()
   {
-    echo $this->render('@scms/widgets/views/portlet_cms_toc',array('rootId'=>$this->rootId));
+    echo $this->render('@frenzelgmbh/scms/widgets/views/portlet_cms_toc',array('rootId'=>$this->rootId));
   }
 }

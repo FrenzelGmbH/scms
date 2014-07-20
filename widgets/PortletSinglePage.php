@@ -53,7 +53,13 @@ class PortletSinglePage extends \frenzelgmbh\appcommon\widgets\AdminPortlet
 	protected function renderContent()
 	{
  		//here we don't return the view, here we just echo it!
-		echo $this->render('@scms/widgets/views/_page',array('model'=>$this->_model));
+ 		if(!is_null($this->_model)){
+			echo $this->render('@scms/widgets/views/_page',array('model'=>$this->_model));
+		}
+		else
+		{
+			echo "";
+		}
 	}
 
 	/**
