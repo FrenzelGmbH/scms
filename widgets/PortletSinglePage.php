@@ -54,7 +54,7 @@ class PortletSinglePage extends \frenzelgmbh\appcommon\widgets\AdminPortlet
 	{
  		//here we don't return the view, here we just echo it!
  		if(!is_null($this->_model)){
-			echo $this->render('@scms/widgets/views/_page',array('model'=>$this->_model));
+			echo $this->render('@frenzelgmbh/scms/widgets/views/_page',array('model'=>$this->_model));
 		}
 		else
 		{
