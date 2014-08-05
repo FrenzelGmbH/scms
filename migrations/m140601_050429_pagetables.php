@@ -32,7 +32,7 @@ class m140601_050429_pagetables extends \yii\db\Migration
 				'ord'             => Schema::TYPE_INTEGER.' 0',
 				'time_create'     => Schema::TYPE_INTEGER,
 				'time_update'     => Schema::TYPE_INTEGER,
-				'special'         => Schema::TYPE_BIG_INTEGER.'(20) DEFAULT NULL',
+				'special'         => Schema::TYPE_INTEGER.'(20) DEFAULT NULL',
 				'title'           => Schema::TYPE_STRING.'(128) NOT NULL',
 				'template'        => Schema::TYPE_STRING,
 				'category'        => Schema::TYPE_STRING.'(64) DEFAULT NULL',
@@ -55,8 +55,8 @@ class m140601_050429_pagetables extends \yii\db\Migration
       	'updated_at'        => Schema::TYPE_INTEGER . ' NOT NULL',
       	'deleted_at'        => Schema::TYPE_INTEGER . ' DEFAULT NULL',
       	//Foreign Keys
-      	'author_id'     	=> Schema::TYPE_INTEGER.' NULL',
-      	'parent_pages_id' => Schema::TYPE_INTEGER.' NULL'
+      	'author_id'     	  => Schema::TYPE_INTEGER.' NULL',
+      	'parent_pages_id'   => Schema::TYPE_INTEGER.' NULL'
 		),$tableOptions);
 
 		/**
