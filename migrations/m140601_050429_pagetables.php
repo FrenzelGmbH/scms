@@ -28,7 +28,7 @@ class m140601_050429_pagetables extends \yii\db\Migration
 		$this->createTable('{{%pages}}',array(
 				'id'              => Schema::TYPE_PK,
 				'name'            => Schema::TYPE_TEXT,
-				'body'            => Schema::TYPE_MEDIUM_TEXT,
+				'body'            => Schema::TYPE_TEXT,
 				'ord'             => Schema::TYPE_INTEGER.' 0',
 				'time_create'     => Schema::TYPE_INTEGER,
 				'time_update'     => Schema::TYPE_INTEGER,
