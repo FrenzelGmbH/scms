@@ -29,7 +29,7 @@ class m140601_050429_pagetables extends \yii\db\Migration
 				'id'              => Schema::TYPE_PK,
 				'name'            => Schema::TYPE_TEXT,
 				'body'            => Schema::TYPE_TEXT,
-				'ord'             => Schema::TYPE_INTEGER.' 0',
+				'ord'             => Schema::TYPE_INTEGER.' DEFAULT 0',
 				'time_create'     => Schema::TYPE_INTEGER,
 				'time_update'     => Schema::TYPE_INTEGER,
 				'special'         => Schema::TYPE_INTEGER.'(20) DEFAULT NULL',
