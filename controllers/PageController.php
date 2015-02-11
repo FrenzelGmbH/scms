@@ -124,7 +124,7 @@ class PageController extends AppController
 	 */
 	public function actionOnlineview($id)
 	{
-		$this->layout = '/column2_blog';
+		$this->layout = '/column2';
 		$model = $this->findModel($id);
 		if(strlen($model->template)>0)
 			$this->layout = $model->template;
