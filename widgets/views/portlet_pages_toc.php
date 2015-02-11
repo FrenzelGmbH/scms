@@ -1,6 +1,6 @@
 <?php
 
-use philippfrenzel\yiijquerytoc\yiijquerytoc;
+use \yii2jquerytoc\yiijquerytoc;
 
 ?>
 
